@@ -26,6 +26,7 @@ public class Moedas {
 			simbolo = "ARS";
 		}
 		return this.simbolo;
+		
 	}
 	
 	public double converter(String moedaInserida, double valor, String MoedaAReceber) {

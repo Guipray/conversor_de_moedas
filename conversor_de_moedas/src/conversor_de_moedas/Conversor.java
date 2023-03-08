@@ -1,5 +1,7 @@
 package conversor_de_moedas;
 
+import java.text.DecimalFormat;
+
 import javax.swing.JOptionPane;
 
 public class Conversor {
@@ -15,66 +17,65 @@ public class Conversor {
 
 		if (escolha == 0) {
 			JOptionPane.showMessageDialog(null, "Conversor de Moedas selecionado!");
+			int opcao = 0;
+			while (opcao == 0) {
+				String escolhaMoedaInserida = (String) JOptionPane.showInputDialog(null,
+						"Escolha uma moeda para converter. De:", "Moedas", JOptionPane.QUESTION_MESSAGE, null,
+						moedaInserida, moedaInserida[0]);
+				
+				if (escolhaMoedaInserida != null) {
 
-			String escolhaMoedaInserida = (String) JOptionPane.showInputDialog(null,
-					"Escolha uma moeda para converter. De:", "Moedas", JOptionPane.QUESTION_MESSAGE, null,
-					moedaInserida, moedaInserida[0]);
-//			if (escolhaMoedaInserida == "Reais") {
-//				Moedas moeda = new Real();
-//				System.out.println("moeda criada");
-//			} else if (escolhaMoedaInserida == "Dolar") {
-//				Moedas moeda = new Dolar();
-//			}
-
-			if (escolhaMoedaInserida != null) {
-
-				Double valor = null;
-				while (valor == null) {
-					System.out.println(valor);
-					try {
-						System.out.println("Teste");
-						valor = Double.parseDouble(JOptionPane.showInputDialog("Insira um valor:"));
-						String escolhaMoedaAReceber = (String) JOptionPane.showInputDialog(null, "Para:", "Moedas",
-								JOptionPane.QUESTION_MESSAGE, null, moedaAReceber, moedaAReceber[1]);
-
-						if (escolhaMoedaAReceber == null) {
-							JOptionPane.showMessageDialog(null, "Programa Finalizado!");
-						} else {
+					while (true) {
+						try {
+							Double valor = Double
+									.parseDouble(JOptionPane.showInputDialog("Insira um valor:").replace(",", "."));
+							String escolhaMoedaAReceber = (String) JOptionPane.showInputDialog(null, "Para:", "Moedas",
+									JOptionPane.QUESTION_MESSAGE, null, moedaAReceber, moedaAReceber[1]);
+							if (escolhaMoedaAReceber == null) {
+								break;
+							}
 							Moedas moeda = new Moedas();
+
 							String simboloMoeda = moeda.getSimbolo(escolhaMoedaInserida);
 							String simboloMoedaConvertida = moeda.getSimbolo(escolhaMoedaAReceber);
 							double valorConvertido = moeda.converter(escolhaMoedaInserida, valor, escolhaMoedaAReceber);
 
-							JOptionPane.showMessageDialog(null,
-									"O valor convertido fica " + simboloMoeda + valorConvertido + "\n (" + simboloMoeda
-											+ valor + " foi para " + simboloMoedaConvertida + valorConvertido + ")");
-						}
+							DecimalFormat df = new DecimalFormat("#.##");
 
-					} catch (NumberFormatException e) {
-						JOptionPane.showMessageDialog(null, "Valor Inválido!");
-					} catch (NullPointerException e) {
+							JOptionPane.showMessageDialog(null,
+									"O valor convertido fica " + simboloMoedaConvertida
+											+ df.format(valorConvertido).replace(",", ".") + "\n (" + simboloMoeda
+											+ df.format(valor).replace(",", ".") + " foi para " + simboloMoedaConvertida
+											+ df.format(valorConvertido).replace(",", ".") + ")");
+							break;
+
+						} catch (NumberFormatException e) {
+							JOptionPane.showMessageDialog(null, "Valor Inválido!");
+						} catch (NullPointerException e) {
+							break;
+						}
+					}
+					opcao = JOptionPane.showConfirmDialog(null, "Deseja continuar?");
+					if (opcao == 1) {
 						JOptionPane.showMessageDialog(null, "Programa Finalizado!");
 						break;
-					} finally {
-
+					} else if (opcao == 2) {
+						JOptionPane.showMessageDialog(null, "Programa Concluído!");
+						break;
+					} else if (opcao == -1) {
+						JOptionPane.showMessageDialog(null, "Programa Finalizado!");
+						break;
 					}
+
+				} else if (escolhaMoedaInserida == null) {
+					JOptionPane.showMessageDialog(null, "Programa Finalizado!");
+					break;
 				}
-
-				// Sistema para remover a moeda recebida na variavel "escolhaMoedaInserida" da
-				// lista moedaAReceber.
-
-				/*
-				 * System.out.println(moedaAReceber.length); for (int i = 0; i <
-				 * moedaAReceber.length; i++) { System.out.println(moedaAReceber[i]); }
-				 */
-
-			} else if (escolhaMoedaInserida == null) {
-				JOptionPane.showMessageDialog(null, "Programa Finalizado!");
 			}
 
 		} else if (escolha == 1) {
 			JOptionPane.showMessageDialog(null, "Conversor de Temperatura selecionado!");
-			// Aqui você pode colocar o código para o Conversor de Temperatura
+			JOptionPane.showMessageDialog(null, "Em breve!");
 		} else if (escolha == -1) {
 			JOptionPane.showMessageDialog(null, "Programa Finalizado!");
 		} else {

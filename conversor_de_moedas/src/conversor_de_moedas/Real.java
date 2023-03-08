@@ -15,5 +15,4 @@ public class Real extends Moedas {
 			setTaxacambio(38.43);
 		}
 	}
-	
 }
