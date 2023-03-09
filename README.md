@@ -7,7 +7,7 @@ Por meio da ferramenta <a href="https://trello.com/b/UzATeQZG/conversor-de-moeda
 
 O objetivo principal é converter as moedas (Dolar, Euro, Libras Esterlinas, Peso Chileno, Peso Argentino) para "Real" e vice versa, usando a Classe "JOptionPane". <br>
 
-<h3 style="font-weight: bold;">Porém eu decidi ir um pouco além, convertendo qualquer uma das moedas listadas para uma outra, também da listada acima.</h3>
+<h3 style="font-weight: bold;">Porém eu decidi ir um pouco além, convertendo qualquer uma das moedas listadas para uma outra, também das listadas acima.</h3>
 
 <h1>Imagens da aplicação em execução: </h1>
 
