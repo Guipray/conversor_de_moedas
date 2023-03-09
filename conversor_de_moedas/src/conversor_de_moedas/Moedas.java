@@ -29,25 +29,19 @@ public class Moedas {
 		
 	}
 	
-	public double converter(String moedaInserida, double valor, String MoedaAReceber) {
+	public double converter(String moedaInserida, double valor, String moedaAReceber) {
 		if (moedaInserida == "Real") {
-			this.moeda = new Real(MoedaAReceber);
-			simbolo = "R$";
+			this.moeda = new Real(moedaAReceber);
 		} else if (moedaInserida == "Dolar") {
-			this.moeda = new Dolar(MoedaAReceber);
-			simbolo = "US$";
+			this.moeda = new Dolar(moedaAReceber);
 		} else if (moedaInserida == "Euro") {
-			this.moeda = new Euro(MoedaAReceber);
-			simbolo = "€";
+			this.moeda = new Euro(moedaAReceber);
 		} else if (moedaInserida == "Libras Esterlinas") {
-			this.moeda = new LibrasEsterlinas(MoedaAReceber);
-			simbolo = "£";
+			this.moeda = new LibrasEsterlinas(moedaAReceber);
 		} else if (moedaInserida == "Peso Chileno") {
-			this.moeda = new PesoChileno(MoedaAReceber);
-			simbolo = "CLP";
+			this.moeda = new PesoChileno(moedaAReceber);
 		} else if (moedaInserida == "Peso Argentino") {
-			this.moeda = new PesoArgentino(MoedaAReceber);
-			simbolo = "ARS";
+			this.moeda = new PesoArgentino(moedaAReceber);
 		} else {
 			return 0;
 		}
