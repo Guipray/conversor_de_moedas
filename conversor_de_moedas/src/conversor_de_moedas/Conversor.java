@@ -66,7 +66,7 @@ public class Conversor {
 						}
 						opcao = JOptionPane.showConfirmDialog(null, "Deseja continuar?");
 						if (opcao == 1) {
-							JOptionPane.showMessageDialog(null, "Programa Finalizado!");
+							JOptionPane.showMessageDialog(null, "Programa Concluído!");
 							break;
 						} else if (opcao == 2) {
 							JOptionPane.showMessageDialog(null, "Programa Concluído!");
@@ -89,7 +89,7 @@ public class Conversor {
 				int opcao = 0;
 				while (opcao == 0) {
 					String escolhaTemperaturaInserida = (String) JOptionPane.showInputDialog(null,
-							"Escolha uma teperatura para ser convertida. De:", "Temperaturas",
+							"Escolha uma temperatura para ser convertida. De:", "Temperaturas",
 							JOptionPane.QUESTION_MESSAGE, null, temperaturas, temperaturas[0]);
 					if (escolhaTemperaturaInserida != null) {
 						boolean valorNulo = true;
@@ -97,7 +97,7 @@ public class Conversor {
 							try {
 								Double inputTemperatura = Double.parseDouble(
 										JOptionPane.showInputDialog(null, "Insira um valor:").replace(",", "."));
-								String escolhaTemperaturaAReceber = (String) JOptionPane.showInputDialog(null, "Para",
+								String escolhaTemperaturaAReceber = (String) JOptionPane.showInputDialog(null, "Para:",
 										"Temperaturas", JOptionPane.QUESTION_MESSAGE, null, temperaturas,
 										temperaturas[1]);
 
@@ -129,7 +129,7 @@ public class Conversor {
 						}
 						opcao = JOptionPane.showConfirmDialog(null, "Deseja continuar?");
 						if (opcao == 1) {
-							JOptionPane.showMessageDialog(null, "Programa Finalizado!");
+							JOptionPane.showMessageDialog(null, "Programa Concluído!");
 							break;
 						} else if (opcao == 2) {
 							JOptionPane.showMessageDialog(null, "Programa Concluído!");
